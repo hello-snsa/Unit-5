@@ -1,4 +1,4 @@
-import { ADD_COUNT, SUB_COUNT, ADD_TODO } from "./actionTypes.js"
+import { ADD_COUNT, SUB_COUNT, ADD_TODO, SET_AGE } from "./actionTypes.js"
 
 export const reducerfn = (state, { type, payload }) => {
 
@@ -20,11 +20,19 @@ export const reducerfn = (state, { type, payload }) => {
                 counter: state.counter - payload,
             }
 
-
+        //case 3
         case ADD_TODO:
             return {
                 ...state,
                 todos: [...state.todos, { ...payload }]
+            }
+
+        //case 4
+        case SET_AGE:
+            return {
+                ...state,
+                // age: payload
+                age: state.age + state.counter
             }
 
 

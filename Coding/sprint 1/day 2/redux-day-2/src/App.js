@@ -1,37 +1,63 @@
 import './App.css';
 // import { store } from './redux/store';
 import { useSelector, useDispatch } from "react-redux";
-import { addCount } from "./redux/actions"
+import { addCount, setAge, subCount } from "./redux/actions"
+import { Todo } from './components/Todo';
+import Calculator1 from './components/Calculator1';
 
 function App() {
-
-  // const { counter } = store.getState();
-  // const x = useSelector((store) => store.counter);
-  // console.log("X is ", x);
 
   const counter = useSelector((store) => store.counter);
   const dispatch = useDispatch();
 
-
+  const age = useSelector((store) => store.age);
 
 
   return (
     <div className="App">
 
-      <h3>Counter: {counter}</h3>
+
+      {/* <Calculator1 /> */}
+
+      <h3>Custom Calculator: {counter}</h3>
 
       <button
         onClick={() => {
-          // store.dispatch(addCount(1));
 
-          // console.log(store.getState());
+          dispatch(subCount(1));
+
+        }}>
+
+        Decrement
+      </button>
+
+      <button
+        onClick={() => {
 
           dispatch(addCount(1));
 
         }}>
 
-        Click me
+        Increment
       </button>
+
+
+      {/* 
+      <h3> age is {age}</h3>
+
+      <button
+        onClick={() => {
+          dispatch(setAge(30))
+        }
+        }>
+        Increase age
+      </button>
+
+
+      <Todo /> */}
+
+
+
     </div>
   );
 }
