@@ -1,4 +1,4 @@
-import { ADD_TODO_LOADING, ADD_TODO_SUCCESS, ADD_TODO_ERROR } from "./actionTypes.js"
+import { ADD_TODO_LOADING, ADD_TODO_SUCCESS, ADD_TODO_ERROR, GET_TODO_SUCCESS, GET_TODO_ERROR, GET_TODO_Loading } from "./actionTypes.js"
 
 
 const initialState = {
@@ -15,6 +15,8 @@ export const reducerfn = (state = initialState, { type, payload }) => {
 
     switch (type) {
 
+        // for Post cases
+
         //case 1
         case ADD_TODO_LOADING:
             return {
@@ -25,6 +27,7 @@ export const reducerfn = (state = initialState, { type, payload }) => {
                 }
             };
 
+        //case 2
         case ADD_TODO_SUCCESS:
             return {
                 ...state,
@@ -34,6 +37,7 @@ export const reducerfn = (state = initialState, { type, payload }) => {
                 }
             }
 
+        //case 3
         case ADD_TODO_ERROR:
             return {
                 ...state,
@@ -44,6 +48,40 @@ export const reducerfn = (state = initialState, { type, payload }) => {
                 }
 
             };
+
+        // for Get cases
+
+
+        //case 4
+        case GET_TODO_SUCCESS:
+            return {
+                ...state,
+                todos: {
+                    ...state.todos,
+                    isLoading: false,
+                    data: [...payload],
+                }
+            }
+
+        //case 4
+        case GET_TODO_ERROR:
+            return {
+                ...state,
+                todos: {
+                    ...state.todos,
+                    isLoading: false,
+
+                }
+            }
+
+
+
+
+
+
+
+
+
 
         //default case
         default:
