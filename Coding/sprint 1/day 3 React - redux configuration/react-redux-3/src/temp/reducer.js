@@ -1,5 +1,8 @@
-import { ADD_TODO_LOADING, ADD_TODO_SUCCESS, ADD_TODO_ERROR, GET_TODO_SUCCESS, GET_TODO_ERROR, GET_TODO_Loading } from "./actionTypes.js"
+import { ADD_TODO_LOADING, ADD_TODO_SUCCESS, ADD_TODO_ERROR, GET_TODO_SUCCESS, GET_TODO_ERROR, GET_TODO_LOADING } from "./actionTypes.js"
 
+const loadData = (key) => {
+    return localStorage.getItem(key)
+}
 
 const initialState = {
 
@@ -53,6 +56,18 @@ export const reducerfn = (state = initialState, { type, payload }) => {
 
 
         //case 4
+        case GET_TODO_LOADING:
+            return {
+                ...state,
+                todos: {
+                    ...state.todos,
+                    isLoading: false,
+                    data: [...payload],
+                }
+            }
+
+
+        //case 5
         case GET_TODO_SUCCESS:
             return {
                 ...state,
@@ -63,7 +78,7 @@ export const reducerfn = (state = initialState, { type, payload }) => {
                 }
             }
 
-        //case 4
+        //case 6
         case GET_TODO_ERROR:
             return {
                 ...state,

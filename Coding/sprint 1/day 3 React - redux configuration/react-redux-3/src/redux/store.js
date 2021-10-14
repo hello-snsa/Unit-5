@@ -1,19 +1,32 @@
-import { createStore } from 'redux';
-import { reducerfn } from "./reducer.js";
+import { combineReducers, createStore } from 'redux';
+import { reducerfn } from "./Todos/reducer.js";
+import { authReducer } from './Auth/reducer.js';
+
+
+const rootReducer = combineReducers({
+    todos: reducerfn, auth: authReducer,
+})
+
+// export const store = createStore(reducerfn);
+// console.log("auth:", auth.todos)
+
+// export const store = createStore(authReducer);
+export const store = createStore(rootReducer);
 
 // const initialState = {
 
-//     todos: {
+//     todos:   {
 //         isLoading: false,
 //         isError: false,
 //         data: [],
-//     },
+//     },  
 
 
 // };
 
 // export const store = createStore(reducerfn, initialState);
-export const store = createStore(reducerfn);
+
+
 
 
 // store.subscribe(function () {

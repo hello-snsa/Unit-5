@@ -1,14 +1,35 @@
 import axios from 'axios'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addTodoSuccess, addTodoLoading, addTodoError } from "../redux/actions";
+import { addTodoSuccess, addTodoLoading, addTodoError, getTodoError, getTodoLoading, getTodoSuccess } from "../redux/Todos/actions.js";
 
 export const Todo = () => {
 
     const [text, setText] = useState("");
 
-    const { data, isLoading, isError } = useSelector((state) => state.todos);
+    const { data, isLoading, isError } = useSelector((state) => state.todos.todos);
+
+
+
+
+
+    const getTodos = async () => {
+        dispatch(getTodoLoading());
+
+        try {
+            const res = await axios.get("http://localhost:3001/todos");
+            dispatch(getTodoSuccess(res.data));
+        } catch (error) {
+            dispatch(getTodoError(error.message));
+
+        }
+    }
+
+    useEffect(() => {
+        getTodos();
+    }, [])
+
 
     const handleAddTodo = async () => {
 
@@ -20,6 +41,7 @@ export const Todo = () => {
                 title: text
             })
             dispatch(addTodoSuccess(resp.data));
+            getTodos();
         } catch (e) {
             dispatch(addTodoError(e.message));
         }
@@ -50,10 +72,6 @@ export const Todo = () => {
                         </p>
                     ))
                 }
-
-
-
-
 
             </div >
 
