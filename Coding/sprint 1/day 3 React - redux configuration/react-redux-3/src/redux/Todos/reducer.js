@@ -88,13 +88,6 @@ export const reducerfn = (state = initialState, { type, payload }) => {
 
 
 
-
-
-
-
-
-
-
         //default case
         default:
             {

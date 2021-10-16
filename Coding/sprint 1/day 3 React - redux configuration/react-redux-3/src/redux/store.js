@@ -4,7 +4,7 @@ import { authReducer } from './Auth/reducer.js';
 
 
 const rootReducer = combineReducers({
-    todos: reducerfn, auth: authReducer,
+    todosStore: reducerfn, auth: authReducer,
 })
 
 // export const store = createStore(reducerfn);

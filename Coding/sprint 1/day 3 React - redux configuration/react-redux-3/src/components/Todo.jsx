@@ -8,7 +8,7 @@ export const Todo = () => {
 
     const [text, setText] = useState("");
 
-    const { data, isLoading, isError } = useSelector((state) => state.todos.todos);
+    const { data, isLoading, isError } = useSelector((state) => state.todosStore.todos);
 
 
 
