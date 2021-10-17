@@ -16,49 +16,36 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal({ props, title, setTodos, todos, setChange, change, id }) {
+export default function BasicModal({ title, setTodos, todos, id }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState(title);
 
-  console.log({ title })
 
   const handleChange = (e) => {
 
     setText(e.target.value);
 
-    console.log("data ", e.target.value)
-    // props(e);
-    // console.log("data title", data, title)
-
   }
+
   const handleClick = () => {
 
-    console.log("text before", title)
-    // title = text;
-    // setChange("hello");
-    // title = change;
+    let temp = [];
+    todos.map(
 
-    // setTodos([...todos]);
-
-    let tt = todos.map(
       (el) => {
-        console.log("todos.el.title", el.id)
-        console.log("id", id)
 
         if (el.id == id) {
           el.title = text;
-          console.log("issss", el.title)
-
         }
+        temp.push(el)
       }
 
 
     )
-    setTodos([...tt])
-    console.log("title after", title)
+    setTodos([...temp])
 
     setOpen(false)
 
@@ -83,7 +70,7 @@ export default function BasicModal({ props, title, setTodos, todos, setChange, c
 
           </Typography>
 
-          <input type="text" placeholder={title} onChange={(e) => handleChange(e)}></input>
+          <input type="text" value={text} onChange={(e) => handleChange(e)}></input>
           <button onClick={handleClick}>Add</button>
         </Box>
       </Modal>

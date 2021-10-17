@@ -117,14 +117,12 @@ export default function Todo() {
                         <button onClick={() => handleDelete(e)}>Delete
                         </button>
 
-                        <BasicModal props={setChange} title={e.title} setTodos={setTodos} todos={todos} setChange={setChange} change={change} id={e.id} />
+                        <BasicModal title={e.title} setTodos={setTodos} todos={todos} id={e.id} />
                     </div >
                 )
                 )
             }
-            {
-                // isModal ? (<BasicModal props={setChange} />) : ("")
-            }
+
 
 
         </div >
