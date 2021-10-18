@@ -1,6 +1,7 @@
-import { Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function MeetupCard({ keyId, e }) {
     return (
@@ -8,7 +9,7 @@ export default function MeetupCard({ keyId, e }) {
 
             <div>
                 <Box>
-                    <img src="defaultImage" alt="meetImage" />
+                    <img src="https://secure-content.meetupstatic.com/images/classic-events/499295749/398x224.webp" alt="meetImage" />
                 </Box>
 
                 <Box>
@@ -24,6 +25,15 @@ export default function MeetupCard({ keyId, e }) {
                         <Box>
                             <Typography varient="p">{e.city}</Typography>
                         </Box>
+                    </Box>
+                    <Box>
+                        <Button variant="contained">
+
+                            <Link to="/enrollMeetup">
+                                Enroll Now
+                            </Link>
+
+                        </Button>
                     </Box>
 
 

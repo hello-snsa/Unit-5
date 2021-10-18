@@ -1,10 +1,27 @@
 {
-    "users": [],
-    "allMeets": [
-        {
-            "date": "THU, OCT 21 @ 3:30 AM IST",
-            "title": "Thought-sketching: Using Visuals for Ideation, Capture & Reflection",
-            "city": "newyork"
-        }
-    ]
+  "users": [
+    {
+      "name": "ddd",
+      "age": "ddd",
+      "address": "ddd",
+      "city": "patna",
+      "interest": "music",
+      "id": 1
+    },
+    {
+      "name": "ali",
+      "age": "snsa",
+      "address": "patna",
+      "city": "patna",
+      "interest": "tech",
+      "id": 2
+    }
+  ],
+  "allMeets": [
+    {
+      "date": "THU, OCT 21 @ 3:30 AM IST",
+      "title": "Thought-sketching: Using Visuals for Ideation, Capture & Reflection",
+      "city": "newyork"
+    }
+  ]
 }

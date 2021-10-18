@@ -18,7 +18,7 @@ const Signup = () => {
     const handleSubmit = () => {
         console.log(name, age, address, city, interest)
         const payload = { name, age, address, city, interest }
-        axios.post('http://localhost:3001/users', {
+        axios.post('http://localhost:3004/users', {
             ...payload
         })
     }
