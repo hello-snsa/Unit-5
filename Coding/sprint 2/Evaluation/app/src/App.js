@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route } from 'react-router';
+import Routes from './Pages/Routes';
 
 function App() {
   return (
@@ -8,7 +10,7 @@ function App() {
 
 
       {/* //technology, food, language learning, movies, culture, art, drama etc */}
-
+      <Routes />
     </div>
   );
 }
