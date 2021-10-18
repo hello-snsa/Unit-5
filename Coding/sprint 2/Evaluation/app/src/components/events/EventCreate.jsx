@@ -12,15 +12,16 @@ import axios from 'axios'
 const EventCreate = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [date, setDate] = useState('');
-    const [rating, setRating] = useState('');
-    const [attende, setAttende] = useState('')
+    const [date, setDate] = useState('')
+    const [rating, setRating] = useState('')
+    const [attende, setAttende] = useState([])
     const [city, setCity] = useState('')
 
     const handleSubmit = () => {
 
+        console.log(title, description, date, rating, city)
         const payload = { title, description, date, rating, city, attende }
-        axios.post('http://localhost:3004/allmeets', {
+        axios.post('http://localhost:3001/allmeets', {
             ...payload
         })
     }
@@ -32,11 +33,8 @@ const EventCreate = () => {
                 <Stack spacing={3} >
                     <TextField id="standard-basic" label="Title" variant="standard" onChange={(e) => setTitle(e.target.value)} />
                     <TextField id="standard-basic" label="Description" variant="standard" onChange={(e) => setDescription(e.target.value)} />
-                    <input type="datetime-local" placeholder="Date" value={date} onChange={(e) => setDate(e.target.value)} nstyle={{ backgroundColor: "skyBlue" }} />
-
-
+                    <input type="datetime-local" placeholder="Date" value={date} onChange={(e) => setDate(e.target.value)} style={{ backgroundColor: '#cfe8fc' }} />
                     <TextField id="standard-basic" label="Rating" variant="standard" onChange={(e) => setRating(e.target.value)} />
-
                     <Box >
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label">Event City</InputLabel>
@@ -55,7 +53,7 @@ const EventCreate = () => {
                         </FormControl>
                     </Box>
 
-                    <Button variant="contained" onClick={handleSubmit}>Create Event</Button>
+                    <Button variant="contained" onClick={handleSubmit}>Create account</Button>
                 </Stack>
             </Box>
         </Container>

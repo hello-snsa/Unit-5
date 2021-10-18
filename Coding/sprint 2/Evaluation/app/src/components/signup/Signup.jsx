@@ -15,6 +15,11 @@ const Signup = () => {
     const [address, setAddress] = useState('')
     const [city, setCity] = useState('')
     const [interest, setInterest] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+
     const handleSubmit = () => {
         console.log(name, age, address, city, interest)
         const payload = { name, age, address, city, interest }
@@ -30,6 +35,14 @@ const Signup = () => {
                 <Stack spacing={3} >
                     <TextField id="standard-basic" label="Name" variant="standard" onChange={(e) => setName(e.target.value)} />
                     <TextField id="standard-basic" label="Age" variant="standard" onChange={(e) => setAge(e.target.value)} />
+
+                    <TextField id="standard-basic" label="Email" variant="standard" onChange={(e) => setEmail(e.target.value)} />
+                    <TextField id="standard-basic" label="Password" variant="standard" onChange={(e) => setPassword(e.target.value)} />
+
+
+
+
+
                     <TextField id="standard-basic" label="Address" variant="standard" onChange={(e) => setAddress(e.target.value)} />
                     <Box >
                         <FormControl fullWidth>
