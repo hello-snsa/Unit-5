@@ -9,6 +9,7 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import axios from 'axios'
+import { Redirect } from "react-router-dom";
 const Signup = () => {
     const [name, setName] = useState('')
     const [age, setAge] = useState('')
@@ -22,10 +23,16 @@ const Signup = () => {
 
     const handleSubmit = () => {
         console.log(name, age, address, city, interest)
-        const payload = { name, age, address, city, interest }
+        const payload = { name, age, email, password, address, city, interest }
         axios.post('http://localhost:3004/users', {
             ...payload
-        })
+
+        }).then(() => {
+            <Redirect to="/home" />
+
+        }
+
+        )
     }
     return (
         <Container fixed>
