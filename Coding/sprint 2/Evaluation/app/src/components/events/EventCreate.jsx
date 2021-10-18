@@ -19,7 +19,7 @@ const EventCreate = () => {
 
     const handleSubmit = () => {
 
-        const payload = { title, description, date, rating, city }
+        const payload = { title, description, date, rating, city, attende }
         axios.post('http://localhost:3004/allmeets', {
             ...payload
         })
@@ -34,15 +34,17 @@ const EventCreate = () => {
                     <TextField id="standard-basic" label="Description" variant="standard" onChange={(e) => setDescription(e.target.value)} />
                     <input type="datetime-local" placeholder="Date" value={date} onChange={(e) => setDate(e.target.value)} nstyle={{ backgroundColor: "skyBlue" }} />
 
-                    <TextField id="standard-basic" label="Address" variant="standard" onChange={(e) => setAddress(e.target.value)} />
+
+                    <TextField id="standard-basic" label="Rating" variant="standard" onChange={(e) => setRating(e.target.value)} />
+
                     <Box >
                         <FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label">City</InputLabel>
+                            <InputLabel id="demo-simple-select-label">Event City</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 value={city}
-                                label="City"
+                                label="Event City"
                                 onChange={(e) => setCity(e.target.value)}
                             >
                                 <MenuItem value={'patna'}>Patna</MenuItem>
@@ -52,24 +54,8 @@ const EventCreate = () => {
                             </Select>
                         </FormControl>
                     </Box>
-                    <Box >
-                        <FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label">Interested Topics</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={interest}
-                                label="Interested Topics"
-                                onChange={(e) => setInterest(e.target.value)}
-                            >
-                                <MenuItem value={'dance'}>dance</MenuItem>
-                                <MenuItem value={'tech'}>tech</MenuItem>
-                                <MenuItem value={'music'}>music</MenuItem>
-                                <MenuItem value={'sports'}>sports</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Box>
-                    <Button variant="contained" onClick={handleSubmit}>Create account</Button>
+
+                    <Button variant="contained" onClick={handleSubmit}>Create Event</Button>
                 </Stack>
             </Box>
         </Container>
