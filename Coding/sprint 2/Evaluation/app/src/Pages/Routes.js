@@ -28,7 +28,7 @@ export default function Routes() {
             </Route>
 
             <Route exact path="/signup">
-                <SignupPage />
+                {/* <SignupPage /> */}
             </Route>
         </Switch>
 

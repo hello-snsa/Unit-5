@@ -1,3 +1,10 @@
 {
-    "users": []
+    "users": [],
+    "allMeets": [
+        {
+            "date": "THU, OCT 21 @ 3:30 AM IST",
+            "title": "Thought-sketching: Using Visuals for Ideation, Capture & Reflection",
+            "city": "newyork"
+        }
+    ]
 }
