@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import AllMeetups from '../components/AllMeetups'
 
 export default function LandingPage() {
     return (
