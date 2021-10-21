@@ -9,7 +9,6 @@ export default function Todo() {
     const [text, setText] = React.useState("");
     const [todos, setTodos] = React.useState([]);
     const [change, setChange] = React.useState("");
-    const [isModal, setIsModal] = React.useState(false);
 
 
 
