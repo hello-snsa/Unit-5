@@ -67,191 +67,52 @@
       "id": 8
     },
     {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
+      "name": "demo2",
+      "age": "22",
+      "email": "demo2@demo2.com",
+      "password": "11",
+      "address": "demo",
+      "city": "bangalore",
+      "interest": "music",
       "id": 9
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 11
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 12
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 13
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 14
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 15
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 16
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 17
-    },
-    {
-      "name": "sss",
-      "age": "sss",
-      "email": "sss",
-      "password": "sss",
-      "address": "sss",
-      "city": "bangalore",
-      "interest": "tech",
-      "id": 18
-    },
-    {
-      "name": "sss",
-      "age": "sss",
-      "email": "sss",
-      "password": "sss",
-      "address": "sss",
-      "city": "bangalore",
-      "interest": "tech",
-      "id": 19
-    },
-    {
-      "name": "sss",
-      "age": "sss",
-      "email": "sss",
-      "password": "sss",
-      "address": "sss",
-      "city": "bangalore",
-      "interest": "tech",
-      "id": 20
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 21
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "",
-      "interest": "",
-      "id": 22
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "bangalore",
-      "interest": "",
-      "id": 23
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "bangalore",
-      "interest": "dance",
-      "id": 24
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "password": "",
-      "address": "",
-      "city": "bangalore",
-      "interest": "dance",
-      "id": 25
-    },
-    {
-      "name": "ali snsa",
-      "age": "ddd",
-      "email": "ddd",
-      "password": "ddd",
-      "address": "delhi",
-      "city": "bangalore",
-      "interest": "dance",
-      "id": 26
     }
   ],
   "allMeets": [
     {
-      "date": "THU, OCT 21 @ 3:30 AM IST",
       "title": "Thought-sketching: Using Visuals for Ideation, Capture & Reflection",
-      "city": "newyork"
+      "description": " ",
+      "date": "THU, OCT 21 @ 3:30 AM IST",
+      "rating": "",
+      "city": "",
+      "attende": [],
+      "id": 1
+    },
+    {
+      "title": "AI in the workplace: EEO Implications and the role of People Analytics ",
+      "description": "wertwer",
+      "date": "WED, OCT 20 @ 3:30 AM IST",
+      "rating": "12341234",
+      "city": "bangalore",
+      "attende": [],
+      "id": 2
+    },
+    {
+      "title": "20's-60's Single Younger Women Older Men Online Speed Dating ",
+      "description": "wertwer",
+      "date": "TUE, OCT 19 @ 4:30 AM IST",
+      "rating": "12341234",
+      "city": "bangalore",
+      "attende": [],
+      "id": 3
+    },
+    {
+      "title": "DEmo",
+      "description": "this is demo",
+      "date": "2022-01-31T01:01",
+      "rating": "67",
+      "city": "patna",
+      "attende": [],
+      "id": 4
     }
   ]
 }

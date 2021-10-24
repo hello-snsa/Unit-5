@@ -6,14 +6,18 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import axios from "axios";
+import { Redirect, useHistory } from "react-router-dom";
+
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [user, setUser] = useState('')
+    const history = useHistory();
     const handleSubmit = () => {
+
         console.log(email, password);
 
-        axios.get("http://localhost:3001/users").then(({ data }) => {
+        axios.get("http://localhost:3004/users").then(({ data }) => {
             const users = data
             console.log('users:', users)
             for (let i = 0; i < users.length; i++) {
@@ -21,10 +25,16 @@ const Login = () => {
                     console.log('login match')
                     setUser(users[i])
                     console.log(user)
+
+                    history.push("/")
+                    alert("Welcome Mr " + user.name)
                     break;
                 }
 
             }
+            < Redirect to="/home" />
+
+
         });
     };
     return (

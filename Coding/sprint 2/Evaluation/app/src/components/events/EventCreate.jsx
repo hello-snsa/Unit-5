@@ -8,6 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { Redirect, useHistory } from "react-router-dom";
 import axios from 'axios'
 const EventCreate = () => {
     const [title, setTitle] = useState('')
@@ -16,13 +17,18 @@ const EventCreate = () => {
     const [rating, setRating] = useState('')
     const [attende, setAttende] = useState([])
     const [city, setCity] = useState('')
+    const history = useHistory();
+
 
     const handleSubmit = () => {
 
         console.log(title, description, date, rating, city)
         const payload = { title, description, date, rating, city, attende }
-        axios.post('http://localhost:3001/allmeets', {
+        axios.post('http://localhost:3004/allMeets', {
             ...payload
+        }).then(() => {
+            history.push("/")
+
         })
     }
     return (

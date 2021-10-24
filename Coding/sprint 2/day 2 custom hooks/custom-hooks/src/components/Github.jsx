@@ -6,12 +6,23 @@ export default function Github() {
 
     useEffect(() => {
 
-        const str = fetch("https://api.github.com/search/users?q=masai&per_page=3").then(((e) => e.json())).then((x) => {
-            console.log(x.total_count);
+        fetch("https://api.github.com/search/users?q=masai&per_page=3")
+            .then((e) => e.json())
 
+            .then((x) => {
 
-            setData([...data, str]);
-        })
+                console.log(x.items);
+
+                for (let i = 0; i < x.items.length; i++) {
+
+                    setData([...data, x.items[i]]);
+                    console.log(x.items[i])
+
+                }
+                console.log(data)
+                // console.log(x.items[0].login)
+
+            })
             .catch(console.error);
 
     }, []);
@@ -19,15 +30,17 @@ export default function Github() {
         <>
             <div>"List"</div>
             {
-                data.map((e) => {
+                data.map((e, i) => (
 
                     // { e }
-
-                    <p>hello</p>
-
-                })
+                    <div key={i}>
+                        <p>hello</p>
+                        {/* <p>{data.[e].login}</p> */}
+                    </div>
+                ))
 
             }
+            <div>"List2"</div>
 
 
 

@@ -22,7 +22,10 @@ export default function AllMeetups() {
 
 
     return (
-        <Box>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gridGap: "10px" }}>
+
+
+
             {
                 loading ? (<Box>Loading...</Box>) :
                     (meet.map((e) => {
@@ -34,6 +37,7 @@ export default function AllMeetups() {
                     }))
             }
 
-        </Box>
+
+        </div>
     )
 }

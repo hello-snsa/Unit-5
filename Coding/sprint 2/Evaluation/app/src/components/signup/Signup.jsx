@@ -9,7 +9,8 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import axios from 'axios'
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
+
 const Signup = () => {
     const [name, setName] = useState('')
     const [age, setAge] = useState('')
@@ -19,6 +20,7 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const history = useHistory();
 
 
     const handleSubmit = () => {
@@ -28,6 +30,9 @@ const Signup = () => {
             ...payload
 
         }).then(() => {
+            alert("Registration success ");
+            history.push("/");
+
             <Redirect to="/home" />
 
         }

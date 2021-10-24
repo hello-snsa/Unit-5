@@ -20,20 +20,24 @@ export default function Routes() {
             </Route>
 
 
-            <Route exact path="/home">
+            <Route path="/home">
                 <HomePage />
             </Route>
 
-            <Route exact path="/login">
+            <Route path="/login">
                 <LoginPage />
             </Route>
 
-            <Route exact path="/signup">
+            <Route path="/signup">
                 <SignupPage />
             </Route>
-            <Route exact path="/createMeet">
+            <Route path="/createMeet">
                 <EventCreate />
             </Route>
+            <Route  >
+                <HomePage />
+            </Route>
+
         </Switch>
 
 
