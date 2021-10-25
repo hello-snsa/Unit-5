@@ -1,4 +1,4 @@
-import Password from '../password.js'
+const Password = require('../password.js')
 function test(description, fn) {
     console.log(description)
     fn()
