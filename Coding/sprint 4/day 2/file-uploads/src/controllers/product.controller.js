@@ -1,26 +1,19 @@
 const express = require("express");
 
+const upload = require("../middlewares/file-upload");
+
+const Product = require("../models/product.model")
 const router = express.Router();
 
-// const User = require("../models/product.model");
-
-// const sendEmail = require('../utils/sendmail');
-
-router.post("/single", async (req, res) => {
-
+router.post("/single", upload.single("productImages"), async (req, res) => {
     try {
-        // const user = await User.create(req.body);
-
-        // await sendEmail({
-        //     to: user.email, // list of receivers
-        //     subject: "Demo mail", // Subject line
-        //     text: "Hello bro...", // plain text body
-        //     html: "<h1>Hello there. This is a test mail.</h1>",
-        // });
-
-
-        // return res.status(201).json({ user: user });
-        return res.status(201).send("Single");
+        console.log(req.file);
+        const product = await Product.create({
+            title: req.body.title,
+            price: req.body.price,
+            image_urls: req.file.path
+        })
+        return res.status(201).send(product);
 
     } catch (err) {
         return res.status(400).json({ status: "failed", message: err });
