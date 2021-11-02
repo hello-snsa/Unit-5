@@ -8,16 +8,20 @@ const userController = require("./Controllers/user.controller");
 const productController = require("./Controllers/product.controller.js");
 
 
-app.use("/users", userController);
-app.use("/products", productController);
 app.use(express.json())
+app.use("/products", productController);
+
+//for 404 routing *note: put this as the last route
+app.use(function (req, res, next) {
+    return res.status(404).send("No route found")
+});
 
 const start = async () => {
 
-    await connect();
+    app.listen(2344, async () => {
+        await connect();
 
-    app.listen(2244, () => {
-        console.log("Listening on port 2244")
+        console.log("Listening on port 2344")
     });
 };
 

@@ -7,7 +7,11 @@ const storage = multer.diskStorage({
         callback(null, path.join(__dirname, "../uploads"));
     },
     filename: function (req, file, callback) {
-        callback(null, new Date().toISOString() + file.originalname);
+        // callback(null, new Date().toISOString() + file.originalname);
+
+        const uniquePrefix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+
+        callback(null, uniquePrefix + "_" + file.originalname)
     },
 });
 

@@ -4,7 +4,7 @@ const express = require('express');
 //to connect with database
 const connect = require("./configs/db");
 //
-const productController = require("./controllers/product.controller");
+const userController = require("./controllers/user.controller");
 //
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(express.json());
 //
 // Writing base route as a middleware
 // app.use("/users", userController);
-app.use("/products", productController);
+app.use("/users", userController);
 
 //for 404 routing *note: put this as the last route
 app.use(function (req, res, next) {
