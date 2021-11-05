@@ -17,6 +17,7 @@ const signup = async (req, res) => {
         const token = newToken(user);
 
         return res.status(201).json({ data: { token } });
+
     } catch (err) {
         return res.status(500).json({ status: "failed", message: "something went wrong " + err });
     }
