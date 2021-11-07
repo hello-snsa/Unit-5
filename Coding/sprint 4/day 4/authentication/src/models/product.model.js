@@ -1,5 +1,5 @@
 // 1: create schema
-// 2. creating the model
+// 2. exporting the model
 
 const mongoose = require("mongoose");
 
@@ -15,10 +15,5 @@ const productSchema = new mongoose.Schema({
     timestamps: true
 });
 
-
-// 2. creating the model
-// const schema = mongoose.model("user", userSchema);
-
-// module.exports = schema;
-
+// exporting the model
 module.exports = mongoose.model("product", productSchema);

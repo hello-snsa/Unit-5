@@ -8,25 +8,18 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true, minLength: 8 },
 
 }, {
-    version: false,
+    versionKey: false,
     timestamps: true
 });
 
-
-userSchema.pre("save", (next) => {
+// Function for Hashing.
+userSchema.pre("save", function (next) {
     if (!this.isModified('password')) {
 
         return next();
     }
 
-    // bcrypt.hash(this.password, 8, (err, hash) => {
-    //     if (err)
-    //         return next(err);
-    //     this.password = hash;
-    //     next();
-    // })
-
-    // Hashing
+    // Hashing done below.
     const hash = bcrypt.hashSync(this.password, 8);
 
     // Setting hashed password
@@ -35,16 +28,11 @@ userSchema.pre("save", (next) => {
 
 })
 
-
+// Checking Password.
 userSchema.methods.checkPassword = function (password) {
-    const passwordHash = this.password;
-    return new Promise((resolve, reject) => {
-        bcrypt.compare(password, passwordHash, (err, same) => {
-            if (err)
-                return reject(err);
-            resolve(same)
-        })
-    })
+
+    return bcrypt.compareSync(password, this.password)
+
 }
 
 

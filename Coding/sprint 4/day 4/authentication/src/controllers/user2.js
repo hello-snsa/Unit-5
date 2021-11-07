@@ -12,6 +12,8 @@ const protect = require("../middlewares/protect");
 //note: 1st is for route and last is for callback function, and everything in between is middleware
 router.post("/",
 
+
+
     body("email").isEmail().withMessage("please enter valid email"),
     body("password").isLength({ min: 8 }).withMessage("please enter 8 digit password"),
 
@@ -33,10 +35,8 @@ router.post("/",
     });
 
 //Getting data
-
-
 router.get("/", protect, async (req, res) => {
-    console.log("req user", await req.user);
+
     try {
 
         const users = await User.find({}).select('-password').lean().exec();
