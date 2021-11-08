@@ -2,7 +2,7 @@ const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 
 const upload = require("../middlewares/fileUpload");
-const User = require("../model/user.model");
+const User = require("../models/user.model");
 
 
 

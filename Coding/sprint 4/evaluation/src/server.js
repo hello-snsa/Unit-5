@@ -1,9 +1,9 @@
 const express = require('express');
 const connect = require('./configs/db');
 
-const userController = require('./controller/user.controller');
+const userController = require('./controllers/user.controller');
 
-const lectureController = require('./controller/lecture.controller');
+const lectureController = require('./controllers/lecture.controller');
 
 const app = express();
 app.use(express.json());

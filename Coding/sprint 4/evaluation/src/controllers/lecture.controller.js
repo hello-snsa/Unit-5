@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const Lecture = require("../model/lecture.model"); l
-const User = require("../model/user.model");
+const Lecture = require("../models/lecture.model");
+const User = require("../models/user.model");
 const { verifyAuth } = require('../middlewares/verifyToken');
 
 
@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
 });
 
 
-router.patch("/:id", checkAccess, async (req, res) => {
+router.patch("/:id", verifyAuth, async (req, res) => {
     const lectures = await Lecture.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
     })
