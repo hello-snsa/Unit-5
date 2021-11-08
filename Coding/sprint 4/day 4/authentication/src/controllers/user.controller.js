@@ -26,7 +26,10 @@ const User = require("../models/user.model");
 
 // Function for creating Token:
 const newToken = (user) => {
-    return jwt.sign({ user: user }, process.env.JWT_SECRET_KEY);
+    return jwt.sign(
+        { user: user },
+        process.env.JWT_SECRET_KEY,
+        { expiresIn: 60 * 5 });
 };
 
 //Creating new user
