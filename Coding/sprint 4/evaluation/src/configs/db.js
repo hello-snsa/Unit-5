@@ -9,3 +9,4 @@ const connect = () => {
 
     return mongoose.connect(dbUrl);
 }
+module.exports=connect;
