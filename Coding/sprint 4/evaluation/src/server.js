@@ -1,25 +1,20 @@
 const express = require('express');
-const connect = require('./configs/db');
+const connect = require('./configs/db')
+const userController = require('./controllers/user.controller')
 
-const app = express();
-app.use(express.json());
+const lectureController = require('./controllers/lecture.controller')
+const studentController = require('./controllers/student.controller')
+const app = express()
 
-const userController = require("./controllers/user.controller");
-const studentController = require("./controllers/student.controller");
-
-const lectureController = require("./controllers/lecture.controller");
-
-
+app.use(express.json())
 
 app.use('/users', userController);
-app.use('/students', studentController);
-app.use('/lectures', lectureController);
 
-app.use((req, res, next) => {
-    return res.status(404).send("No route found");
-});
+app.use('/students', studentController);
+app.use('/lectures', lectureController)
+
 
 app.listen(2244, async () => {
-    await connect();
-    console.log("Listening to port 2244");
+    await connect()
+    console.log('listening on port 2244')
 })
