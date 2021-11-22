@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 
 
 const connect = () => {
-    const dbUrl = process.env.NODE_ENV === "development" ? "mongodb://127.0.0.1:27017/evaluation" : ""
+    const dbUrl = process.env.NODE_ENV === "development" ? "mongodb://127.0.0.1:27017/evaluation2" : ""
 
 
     return mongoose.connect(dbUrl);
 }
-module.exports=connect;
+module.exports = connect;

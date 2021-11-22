@@ -22,7 +22,7 @@ app.get("/getAllUsers", getAllUsers)
 
 
 //for 404 routing *note: put this as the last route.
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
     return res.status(404).send("No route found")
 });
 

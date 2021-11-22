@@ -3,7 +3,7 @@ function runProgram(input) {
   input = input.trim();
   var newInput = input.split("\n");
 
-  var arr = newInput[1].split(" ").map(Number);
+  var arr = newInput[1].split("").map(Number);
   var data = newInput[0].split(" ").map(Number);
   var len = data[0];
   var k = data[1];

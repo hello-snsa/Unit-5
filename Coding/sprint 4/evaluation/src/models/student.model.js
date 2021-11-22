@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const User = require('./user.model')
-
 const studentSchema = new mongoose.Schema({
     roll_no: { type: Number, required: true },
     batch_name: { type: String, required: true },

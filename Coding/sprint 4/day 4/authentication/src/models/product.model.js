@@ -1,5 +1,5 @@
 // 1: create schema
-// 2. exporting the model
+// 2. export the model
 
 const mongoose = require("mongoose");
 
