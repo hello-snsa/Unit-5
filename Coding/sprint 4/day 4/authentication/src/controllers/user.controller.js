@@ -14,7 +14,7 @@
 // 1: check if user already exists.
 // 2: if user doesn't exists then throw an error.
 // 3: if user exists then match the password.
-// 4: if password don't match then through an error.
+// 4: if password don't match then throw an error.
 // 5: if password matches then create the token
 // 6: return the token to the frontend
 */
