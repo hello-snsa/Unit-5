@@ -77,7 +77,7 @@ const signin = async (req, res) => {
     try {
         const match = await user.checkPassword(req.body.password);
 
-        // 4: if password don't match then through an error.
+        // 4: if password don't match then throw an error.
         if (!match) {
             return res.status(401)
                 .json({ status: "failed", message: "password incorrect" });

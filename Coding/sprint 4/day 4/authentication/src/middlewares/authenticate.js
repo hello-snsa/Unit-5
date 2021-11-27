@@ -57,7 +57,7 @@ const authenticate = async (req, res, next) => {
     } catch (err) {
         return res.status(401).json({
             status: "failed",
-            message: "Your email or password is not01 correct " + err,
+            message: "Your email or password is not correct " + err,
         });
     }
 
@@ -71,7 +71,7 @@ const authenticate = async (req, res, next) => {
     if (!user) {
         return res.status(401).json({
             status: "failed",
-            message: "Your email or password is not02 correct",
+            message: "Your email or password is not correct",
         });
     }
 
